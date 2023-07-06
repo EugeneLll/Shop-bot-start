@@ -467,7 +467,7 @@ async def conf(call: types.CallbackQuery, state: FSMContext):
     )
 
 
-@dp.message_handler(content_types=["text"], state=Adress.pay)
+@dp.message_handler(text="confirmed", content_types=["text"], state=Adress.pay)
 async def sucsess(message: types.Message, state: FSMContext):
     data = await state.get_data()
     adr = data["entered_adr"]
